@@ -4,5 +4,6 @@ class DayweeksController < ApplicationController
   end
 
   def new
+
   end
 end
