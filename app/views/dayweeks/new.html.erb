@@ -4,10 +4,10 @@
      <br>
      <%= form_for :dayweek, url: dayweeks_path do |f| %>
 
-         <p class = "text-success">Название</p>
+         <p class = "text-success">Название дня недели</p>
          <%= f.text_field :brief, class: "form-control" %>
          <br>
-         <%= f.submit 'Добавить', class: "btn" %>
+         <%= f.submit 'Добавить день', class: "btn" %>
 
        <% end %>
 

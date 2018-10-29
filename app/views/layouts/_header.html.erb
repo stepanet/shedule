@@ -2,11 +2,10 @@
 <h5 class="my-0 mr-md-auto font-weight-bold" style="color: gray">Расписание занятий</h5>
 <nav class="my-2 my-md-0 mr-md-3">
 <span class="p-2 text-dark"></span>
-<span class="p-2 text-dark"><%= link_to "Дни недели", dayweeks_path %></span>
-<span class="p-2 text-dark"><%= link_to "Предметы", lessons_path %></span>
-<span class="p-2 text-dark">Для администрации:</span>
-<span class="p-2 text-dark"><%= link_to "Новый день", new_dayweek_path %></span>
-<span class="p-2 text-dark"><%= link_to "Новый урок", new_lesson_path %></span>
+<a href="<%= dayweeks_path %>" class="btn btn-info" role="button">Дни недели</a>
+<a href="<%= lessons_path %>" class="btn btn-info" role="button">Предметы</a>
+<a href="<%= new_dayweek_path %>" class="btn btn-danger disabled" role="button">Новый день</a>
+<a href="<%= new_lesson_path %>" class="btn btn-danger" role="button">Новый предмет</a>
 </div>
 </nav>
 <br>

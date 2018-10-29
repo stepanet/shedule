@@ -10,9 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_29_075417) do
+ActiveRecord::Schema.define(version: 2018_10_29_134922) do
 
   create_table "dayweeks", force: :cascade do |t|
+    t.string "brief"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lessons", force: :cascade do |t|
     t.string "brief"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

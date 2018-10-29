@@ -1,5 +1,5 @@
 class DayweeksController < ApplicationController
-  http_basic_authenticate_with name: "admin", password: "hunter2", except: [:index, :show]
+  #http_basic_authenticate_with name: "admin", password: "hunter2", except: [:index, :show]
   
   def index
     @dayweek = Dayweek.all

@@ -1,4 +1,8 @@
 <%= render 'layouts/body' %>
 <div class='all-posts'>
-
+<% @lesson.each do |lesson| %>
+    <div class = 'alert alert-info'>
+        <h5><%= lesson.brief %></h5>
+    </div>
+<% end %>
 </div>
