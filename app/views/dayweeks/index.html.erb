@@ -3,6 +3,7 @@
 <% @dayweek.each do |dayweek| %>
     <div class = 'alert alert-info'>
         <h5><%= dayweek.brief %></h5>
+        <%= link_to 'Редактировать...', edit_dayweek_path(dayweek), {class: 'btn btn-outline-info'}  %>
     </div>
 <% end %>
 </div>

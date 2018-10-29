@@ -1,0 +1,9 @@
+<h2>Редактировать:</h2>
+<%= form_for :lesson, url: lesson_path(@lesson), method: :patch do |f| %>
+    <p>Название<br>
+        <%= f.text_field :brief, {class: 'form-control'} %>
+    </p>
+    <%= f.submit 'сохранить', {class: 'btn btn-success'} %>
+<% end %>
+<hr>
+<%= link_to 'удалить..', lesson_path(@lesson), method: :delete, data: { confirm: 'Вы уверены?' } , class: 'btn btn-outline-danger' %>

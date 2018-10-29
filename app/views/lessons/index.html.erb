@@ -3,6 +3,7 @@
 <% @lesson.each do |lesson| %>
     <div class = 'alert alert-info'>
         <h5><%= lesson.brief %></h5>
+        <%= link_to 'Редактировать...', edit_lesson_path(lesson), {class: 'btn btn-outline-info'}  %>
     </div>
 <% end %>
 </div>

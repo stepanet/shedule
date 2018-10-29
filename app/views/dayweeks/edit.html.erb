@@ -1,0 +1,9 @@
+<h2>Редактировать:</h2>
+<%= form_for :dayweek, url: dayweek_path(@dayweek), method: :patch do |f| %>
+    <p>Название<br>
+        <%= f.text_field :brief, {class: 'form-control'} %>
+    </p>
+    <%= f.submit 'сохранить', {class: 'btn btn-success'} %>
+<% end %>
+<hr>
+<%= link_to 'удалить..', dayweek_path(@dayweek), method: :delete, data: { confirm: 'Вы уверены?' } , class: 'btn btn-outline-danger' %>

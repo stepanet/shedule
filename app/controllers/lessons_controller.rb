@@ -10,7 +10,7 @@ class LessonsController < ApplicationController
   end
   
   def create
-    #render plain: params[:dayweek].inspect
+    #render plain: params[:lesson].inspect
     @lesson = Lesson.new(post_params)
     @lesson.save
     redirect_to @lesson
@@ -23,6 +23,22 @@ class LessonsController < ApplicationController
   def edit
     @lesson = Lesson.find(params[:id])
   end
+  
+  def destroy
+        @lesson = Lesson.find(params[:id])
+        @lesson.destroy
+        redirect_to lessons_path
+  end
+    
+  def update
+      @lesson = Lesson.find(params[:id])
+        
+      if(@lesson.update(post_params))
+          redirect_to lessons_path
+      else 
+          render 'edit'
+      end
+  end      
   
 
   private def post_params

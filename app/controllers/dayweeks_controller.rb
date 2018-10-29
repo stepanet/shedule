@@ -25,6 +25,25 @@ class DayweeksController < ApplicationController
     @dayweek = Dayweek.find(params[:id])
   end
   
+  
+  def destroy
+        @dayweek = Dayweek.find(params[:id])
+        @dayweek.destroy
+        redirect_to dayweeks_path
+  end
+    
+  def update
+      @dayweek = Dayweek.find(params[:id])
+        
+      if(@dayweek.update(post_params))
+          redirect_to dayweeks_path
+      else 
+          render 'edit'
+      end
+        
+  end
+  
+  
 
   private def post_params
       params.require(:dayweek).permit(:brief)
