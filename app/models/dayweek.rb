@@ -1,0 +1,2 @@
+class Dayweek < ApplicationRecord
+end

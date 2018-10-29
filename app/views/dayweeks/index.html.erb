@@ -1,4 +1,8 @@
 <h1 class = "text-success">Дни недели</h1>
 <div class='all-posts'>
-
+<% @dayweek.each do |dayweek| %>
+    <div class = 'alert alert-light'>
+        <h3><%= dayweek.brief %></h3>
+    </div>
+<% end %>
 </div>
