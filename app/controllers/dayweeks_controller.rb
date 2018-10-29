@@ -1,6 +1,7 @@
 class DayweeksController < ApplicationController
   def index
     @dayweek = Dayweek.all
+    @titlebody = "Дни недели"
   end
 
   def new
