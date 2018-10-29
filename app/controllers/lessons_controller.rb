@@ -8,38 +8,38 @@ class LessonsController < ApplicationController
   def new
     @lesson = Lesson.new
   end
-  
+
   def create
     #render plain: params[:lesson].inspect
     @lesson = Lesson.new(post_params)
     @lesson.save
-    redirect_to @lesson
+    redirect_to lessons_path
   end
-  
+
   def show
     @lesson = Lesson.find(params[:id])
   end
-    
+
   def edit
     @lesson = Lesson.find(params[:id])
   end
-  
+
   def destroy
         @lesson = Lesson.find(params[:id])
         @lesson.destroy
         redirect_to lessons_path
   end
-    
+
   def update
       @lesson = Lesson.find(params[:id])
-        
+
       if(@lesson.update(post_params))
           redirect_to lessons_path
-      else 
+      else
           render 'edit'
       end
-  end      
-  
+  end
+
 
   private def post_params
       params.require(:lesson).permit(:brief)

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numlesson: MyString
+  lessonid: 1
+  startlesson: MyString
+  endlesson: MyString
+
+two:
+  numlesson: MyString
+  lessonid: 1
+  startlesson: MyString
+  endlesson: MyString

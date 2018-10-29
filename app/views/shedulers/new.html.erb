@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <h1 class = "text-info">Новое расписание</h1>
+     <br>
+     <%= form_for :sheduler, url: shedulers_path do |f| %>
+
+
+     <% if @sheduler.errors.any? %>
+      <% @sheduler.errors.full_messages.each do |msg| %>
+        <% if msg == 'Title can\'t be blank' %>
+                <div class="alert alert-danger"><%= 'название не может быть пустым' %></div>
+            <% elsif msg == 'Title is too short (minimum is 5 characters)' %>
+                <div class="alert alert-danger"><%= 'минимальное кол-во символов равно 5' %></div>
+            <% else %>
+                <div class="alert alert-danger"><%= msg %></div>
+        <% end %>
+    <% end %>
+<% end%>
+
+         <p class = "text-info">День недели<br>
+        <%= f.select :dayid, options_from_collection_for_select(Dayweek.all, "id", "brief"), {}, class: 'form-control' %>
+        <br>
+         <p class = "text-info">Номер урока<br>
+        <%= f.select :numlesson, options_from_collection_for_select(Numlesson.all, "id", "brief"), {}, class: 'form-control' %>
+        <br>
+         <p class = "text-info">Название урока<br>
+        <%= f.select :lessonid, options_from_collection_for_select(Lesson.all, "id", "brief"), {}, class: 'form-control' %>
+        <br>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <p class = "text-info">Начало урока</p>
+              <%= f.text_field :startlesson, class: "form-control" %>
+            </div>
+            <div class="col-sm">
+              <p class = "text-info">Окончание урока</p>
+              <%= f.text_field :endlesson, class: "form-control" %>
+            </div>
+          </div>
+        </div>
+      </p>
+         <%= f.submit 'Добавить урок', class: "btn btn-info" %>
+       <% end %>
+  </div>
+</div>

@@ -1,13 +1,13 @@
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2">
-    <h1 class = "text-success">Добавление урока</h1>
+    <h1 class = "text-info">Добавление урока</h1>
      <br>
      <%= form_for :lesson, url: lessons_path do |f| %>
 
-         <p class = "text-success">Название урока</p>
+         <p class = "text-info">Название урока</p>
          <%= f.text_field :brief, class: "form-control" %>
          <br>
-         <%= f.submit 'Добавить урок', class: "btn" %>
+         <%= f.submit 'Добавить урок', class: "btn btn-info" %>
 
        <% end %>
   </div>

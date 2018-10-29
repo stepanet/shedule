@@ -1,13 +1,13 @@
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2">
-    <h1 class = "text-success">Добавление дня недели</h1>
+    <h1 class = "text-info">Добавление дня недели</h1>
      <br>
      <%= form_for :dayweek, url: dayweeks_path do |f| %>
 
-         <p class = "text-success">Название дня недели</p>
+         <p class = "text-info">Название дня недели</p>
          <%= f.text_field :brief, class: "form-control" %>
          <br>
-         <%= f.submit 'Добавить день', class: "btn" %>
+         <%= f.submit 'Добавить день', class: "btn btn-info" %>
 
        <% end %>
 

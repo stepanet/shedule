@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   resources :dayweeks
   resources :lessons
+  resources :shedulers
 end

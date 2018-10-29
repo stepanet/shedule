@@ -1,0 +1,15 @@
+<%= render 'layouts/body' %>
+<div class='all-posts'>
+  <% @sheduler.each do |sheduler| %>
+      <div class = 'alert alert-info'>
+          <h5><%= sheduler.dayid %></h5>
+          <h5><%= sheduler.numlesson %></h5>
+          <h5><%= sheduler.lessonid %></h5>
+          <h5><%= sheduler.startlesson %></h5>
+          <h5><%= sheduler.endlesson %></h5>
+          <%= link_to 'Редактировать...', edit_sheduler_path(sheduler), {class: 'btn btn-outline-info'}  %>
+      </div>
+  <% end %>
+</div>
+
+#:dayid, :numlesson, :lessonid, :startlesson, :endlesson

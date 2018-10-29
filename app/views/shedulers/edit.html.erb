@@ -1,0 +1,9 @@
+<h2>Редактировать:</h2>
+<%= form_for :sheduler, url: sheduler_path(@sheduler), method: :patch do |f| %>
+    <p>Название<br>
+        <%= f.text_field :dayid, {class: 'form-control'} %>
+    </p>
+    <%= f.submit 'сохранить', {class: 'btn btn-success'} %>
+<% end %>
+<hr>
+<%= link_to 'удалить..', sheduler_path(@sheduler), method: :delete, data: { confirm: 'Вы уверены?' } , class: 'btn btn-outline-danger' %>
