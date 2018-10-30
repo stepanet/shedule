@@ -3,7 +3,7 @@
     <p>Название<br>
         <%= f.text_field :brief, {class: 'form-control'} %>
     </p>
-    <%= f.submit 'сохранить', {class: 'btn btn-success'} %>
+    <%= f.submit 'сохранить', {class: 'btn btn-sm btn-success'} %>
 <% end %>
 <hr>
-<%= link_to 'удалить..', lesson_path(@lesson), method: :delete, data: { confirm: 'Вы уверены?' } , class: 'btn btn-outline-danger' %>
+<%= link_to 'удалить..', lesson_path(@lesson), method: :delete, data: { confirm: 'Вы уверены?' } , class: 'btn btn-sm btn-outline-danger disabled' %>

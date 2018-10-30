@@ -1,9 +1,29 @@
 <h2>Редактировать:</h2>
 <%= form_for :sheduler, url: sheduler_path(@sheduler), method: :patch do |f| %>
-    <p>Название<br>
-        <%= f.text_field :dayid, {class: 'form-control'} %>
-    </p>
-    <%= f.submit 'сохранить', {class: 'btn btn-success'} %>
-<% end %>
+    
+             <p class = "text-info">День недели<br>
+        <%= f.select :dayweek_id, options_from_collection_for_select(Dayweek.all, "id", "brief"), {}, class: 'form-control' %>
+        <br>
+         <p class = "text-info">Номер урока<br>
+        <%= f.select :numlesson_id, options_from_collection_for_select(Numlesson.all, "id", "brief"), {}, class: 'form-control' %>
+        <br>
+         <p class = "text-info">Название урока<br>
+        <%= f.select :lesson_id, options_from_collection_for_select(Lesson.all, "id", "brief"), {}, class: 'form-control' %>
+        <br>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <p class = "text-info">Начало урока</p>
+              <%= f.text_field :startlesson, class: "form-control" %>
+            </div>
+            <div class="col-sm">
+              <p class = "text-info">Окончание урока</p>
+              <%= f.text_field :endlesson, class: "form-control" %>
+            </div>
+          </div>
+        </div>
+      </p>
+         <%= f.submit 'Сохранить изменения', class: "btn btn-sm btn-info" %>
+       <% end %>
 <hr>
-<%= link_to 'удалить..', sheduler_path(@sheduler), method: :delete, data: { confirm: 'Вы уверены?' } , class: 'btn btn-outline-danger' %>
+<%= link_to 'удалить..', sheduler_path(@sheduler), method: :delete, data: { confirm: 'Вы уверены?' } , class: 'btn btn-sm btn-outline-danger' %>

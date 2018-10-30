@@ -1,8 +1,20 @@
 <h1><%= @dayweek.brief %></h1>
 <% @dayweek.shedulers.each do |sheduler| %>
     <div class = 'alert alert-info'>
-          Номер урока:<%= sheduler.numlesson.brief %><br>
-          Урок:<%= sheduler.lesson.brief %><br>
-          Начало урока:<%= sheduler.startlesson %> Окончание урока:<%= sheduler.endlesson %>
+    <div class="container">
+      <div class="row">
+            <div class="col-xs">
+              <h2><%= sheduler.numlesson.brief %></h2>
+            </div>
+            <div class="col-sm">
+                  <%= sheduler.lesson.brief %><br>
+                  <%= sheduler.startlesson %><br>
+                  <%= sheduler.endlesson %>
+            </div>
+            <div class="col-xs">
+            <%= link_to 'Редактировать...', edit_sheduler_path(sheduler), {class: 'btn btn-sm btn-outline-info'}  %>
+            </div>
+          </div>
+        </div>        
     </div>
 <% end %>

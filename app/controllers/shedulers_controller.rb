@@ -1,7 +1,8 @@
 class ShedulersController < ApplicationController
+#  http_basic_authenticate_with name: "admin", password: "123456", except: [:index, :show]
   def index
     @sheduler = Sheduler.all
-    @titlebody = "Расписание"
+    @titlebody = "Расписание всех уроков на неделю"
   end
 
   def new
@@ -34,9 +35,10 @@ end
 
 def update
     @sheduler = Sheduler.find(params[:id])
+    #@path_to_shedulers = Sheduler.find(params[:id])
 
     if(@sheduler.update(post_params))
-        redirect_to @sheduler
+        redirect_to dayweek_path(@sheduler.dayweek)
     else
         render 'edit'
     end
