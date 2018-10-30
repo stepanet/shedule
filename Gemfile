@@ -8,14 +8,14 @@ ruby '2.5.1'
 gem 'rails', '~> 5.2.1'
 # Use sqlite3 as the database for Active Record
 
-#group :development, :test do
+group :development, :test do
   gem 'sqlite3'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-#end
+end
 
 group :production do
-  #gem 'pg',             '0.20.0'
-  #gem 'rails_12factor', '0.0.2'
+  gem 'pg',             '0.20.0'
+  gem 'rails_12factor', '0.0.2'
 end
 
 
