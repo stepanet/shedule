@@ -1,1 +1,8 @@
 <h1><%= @dayweek.brief %></h1>
+<% @dayweek.shedulers.each do |sheduler| %>
+    <div class = 'alert alert-info'>
+          Номер урока:<%= sheduler.numlesson.brief %><br>
+          Урок:<%= sheduler.lesson.brief %><br>
+          Начало урока:<%= sheduler.startlesson %> Окончание урока:<%= sheduler.endlesson %>
+    </div>
+<% end %>

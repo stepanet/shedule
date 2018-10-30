@@ -45,7 +45,7 @@ end
 
 
   private def post_params
-      params.require(:sheduler).permit(:dayid, :numlesson, :lessonid, :startlesson, :endlesson)
+      params.require(:sheduler).permit(:dayweek_id, :numlesson_id, :lesson_id, :startlesson, :endlesson)
   end
 
 end

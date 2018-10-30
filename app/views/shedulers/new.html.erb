@@ -16,15 +16,14 @@
         <% end %>
     <% end %>
 <% end%>
-
          <p class = "text-info">День недели<br>
-        <%= f.select :dayid, options_from_collection_for_select(Dayweek.all, "id", "brief"), {}, class: 'form-control' %>
+        <%= f.select :dayweek_id, options_from_collection_for_select(Dayweek.all, "id", "brief"), {}, class: 'form-control' %>
         <br>
          <p class = "text-info">Номер урока<br>
-        <%= f.select :numlesson, options_from_collection_for_select(Numlesson.all, "id", "brief"), {}, class: 'form-control' %>
+        <%= f.select :numlesson_id, options_from_collection_for_select(Numlesson.all, "id", "brief"), {}, class: 'form-control' %>
         <br>
          <p class = "text-info">Название урока<br>
-        <%= f.select :lessonid, options_from_collection_for_select(Lesson.all, "id", "brief"), {}, class: 'form-control' %>
+        <%= f.select :lesson_id, options_from_collection_for_select(Lesson.all, "id", "brief"), {}, class: 'form-control' %>
         <br>
         <div class="container">
           <div class="row">

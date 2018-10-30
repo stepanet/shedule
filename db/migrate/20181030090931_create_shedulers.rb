@@ -1,9 +1,9 @@
 class CreateShedulers < ActiveRecord::Migration[5.2]
   def change
     create_table :shedulers do |t|
-      t.integer :dayid
-      t.string :numlesson
-      t.integer :lessonid
+      t.integer :dayweek_id
+      t.string :numlesson_id
+      t.integer :lesson_id
       t.string :startlesson
       t.string :endlesson
 

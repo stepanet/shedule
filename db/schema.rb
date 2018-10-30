@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_29_201008) do
+ActiveRecord::Schema.define(version: 2018_10_30_090931) do
 
   create_table "dayweeks", force: :cascade do |t|
     t.string "brief"
@@ -31,9 +31,9 @@ ActiveRecord::Schema.define(version: 2018_10_29_201008) do
   end
 
   create_table "shedulers", force: :cascade do |t|
-    t.integer "dayid"
-    t.string "numlesson"
-    t.integer "lessonid"
+    t.integer "dayweek_id"
+    t.string "numlesson_id"
+    t.integer "lesson_id"
     t.string "startlesson"
     t.string "endlesson"
     t.datetime "created_at", null: false
