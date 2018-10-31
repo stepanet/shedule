@@ -1,23 +1,42 @@
-<div class="d-flex flex-column flex-md-row align-items-right p-3 px-md-4 mb-3 bg-white border-bottom">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Расписание занятий</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                 <a class="nav-link js-scroll-trigger" href="<%= dayweeks_path %>">Расписание</a>
+            </li>
+                 <a class="nav-link js-scroll-trigger" href="<%= lessons_path %>">Предметы</a>
+            </li>
+                 <a class="nav-link js-scroll-trigger" href="<%= shedulers_path %>">Расписание на неделю</a>
+            </li>
+
+                   
+                 <a class="nav-link js-scroll-trigger" href="<%= new_dayweek_path %>">Новый день</a>
+            </li>
+            <li class="nav-item">
+                 <a class="nav-link js-scroll-trigger" href="<%= new_lesson_path %>">Новый предмет</a>
+            </li>
+            <li class="nav-item">
+                 <a class="nav-link js-scroll-trigger" href="<%= new_sheduler_path %>">Новое расписание</a>
+            <% if user_signed_in? %>         
+             <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<br><br><br>
+<div class="d-flex flex-column flex-md-row align-items-left p-3 px-md-4 mb-3 bg-white border-bottom">
 <% if user_signed_in? %>
     <span>Здравствуйте, <%= current_user.email %></span>
     <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
 <% else %>
     <%= link_to 'Войти', new_user_session_path %>&nbspили&nbsp<%= link_to 'Зарегистрироваться', new_user_registration_path %>
 <% end %></div>
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-<h5 class="my-0 mr-md-auto font-weight-bold" style="color: gray">Расписание занятий</h5>
-<nav class="my-2 my-md-0 mr-md-2">
-<span class="p-2 text-dark"></span>
-
-<a href="<%= dayweeks_path %>" class="btn btn-sm btn-info" role="button">Расписание</a>
-<a href="<%= lessons_path %>" class="btn btn-sm btn-info" role="button">Предметы</a>
-<a href="<%= shedulers_path %>" class="btn  btn-sm btn-success" role="button">Расписание на неделю</a>
-<% if user_signed_in? %>
-    <a href="<%= new_dayweek_path %>" class="btn btn-sm btn-danger " role="button">Новый день</a>
-    <a href="<%= new_lesson_path %>" class="btn btn-sm btn-danger" role="button">Новый предмет</a>
-    <a href="<%= new_sheduler_path %>" class="btn btn-sm btn-danger" role="button">Новое расписание</a>
-<% end %>    
-</div>
 </nav>
-<br>
