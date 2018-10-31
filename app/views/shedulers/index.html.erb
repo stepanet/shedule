@@ -13,7 +13,9 @@
                 <%= sheduler.lesson.brief %><br>
           </div>
           <div class="col-2">
+            <% if user_signed_in? %>  
                 <%= link_to 'Редактировать...', edit_sheduler_path(sheduler), {class: 'btn btn-sm btn-outline-info'}  %>
+            <% end %>
           </div>
         </div>
       </div>
