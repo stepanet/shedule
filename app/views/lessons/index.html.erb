@@ -8,7 +8,9 @@
           <h5><%= lesson.brief %></h5>
         </div>
         <div class="col-xs">
+          <% if user_signed_in? %>  
           <%= link_to 'Редактировать...', edit_lesson_path(lesson), {class: 'btn btn-sm btn-outline-info'}  %>
+          <% end %>
         </div>
       </div>
     </div>
