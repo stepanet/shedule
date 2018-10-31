@@ -39,11 +39,4 @@
     </nav>
 
 <br><br><br>
-<div class="d-flex flex-column flex-md-row align-items-left p-3 px-md-4 mb-3 bg-white border-bottom">
-<% if user_signed_in? %>
-    <span>Здравствуйте, <%= current_user.email %></span>
-    <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
-<% else %>
-    <%= link_to 'Войти', new_user_session_path %>&nbspили&nbsp<%= link_to 'Зарегистрироваться', new_user_registration_path %>
-<% end %></div>
 </nav>
