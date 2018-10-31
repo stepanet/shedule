@@ -1,6 +1,7 @@
 class DayweeksController < ApplicationController
-  #http_basic_authenticate_with name: "admin", password: "hunter2", except: [:index, :show]
-  
+#before_action :authenticate_user!
+
+
   def index
     @dayweek = Dayweek.all
     @titlebody = "Дни недели"
