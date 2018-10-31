@@ -5,7 +5,9 @@
     <div class = 'alert alert-info'>
         <h5><%= dayweek.brief %></h5>
         <%= link_to 'Расписание на ' + dayweek.brief, dayweek_path(dayweek), {class: 'btn btn-sm btn-outline-info'}  %>
-        <%= link_to 'Редактировать...', edit_dayweek_path(dayweek), {class: 'btn btn-sm btn-outline-info disabled'}  %>
+        <% if user_signed_in? %>  
+        <%= link_to 'Редактировать...', edit_dayweek_path(dayweek), {class: 'btn btn-sm btn-outline-info'}  %>
+        <% end %>
     </div>
 <% end %>
 </div>
