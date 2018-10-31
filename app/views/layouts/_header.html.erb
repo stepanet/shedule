@@ -4,8 +4,7 @@
         <span class="navbar-brand js-scroll-trigger" href="#page-top">
           
           <% if user_signed_in? %>
-          <span>Здравствуйте, <%= current_user.email %></span>
-          <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
+          <%= link_to 'Выйти', destroy_user_session_path, method: :delete, data: { confirm: 'Вы уверены?' } , class: 'btn btn-sm btn-outline-danger' %>
           <% else %>
           <%= link_to 'Войти', new_user_session_path, {class: 'btn btn-sm btn-outline-info'}  %>&nbsp<%= link_to 'Зарегистрироваться', new_user_registration_path, {class: 'btn btn-sm btn-outline-info'}  %>
           <% end %>
