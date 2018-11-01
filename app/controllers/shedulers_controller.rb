@@ -1,7 +1,8 @@
 class ShedulersController < ApplicationController
 #  http_basic_authenticate_with name: "admin", password: "123456", except: [:index, :show]
   def index
-    @sheduler = Sheduler.all
+    # @sheduler = Sheduler.all
+     @dayweeks = Dayweek.all
     @titlebody = "Расписание всех уроков на неделю"
   end
 

@@ -1,16 +1,15 @@
 <%= render 'layouts/body' %>
 <div class='all-posts'>
-  <% @sheduler.each do |sheduler| %>
+  <% @dayweeks.each do |dayweek| %>
+  <h1 class="display-4"><%= dayweek.brief %></h1>
+    <% dayweek.shedulers.each do |sheduler| %>
       <div class = 'alert alert-info'>
-        
-        
         <div class="container">
           <div class="row">
-            <div class="col-sm">
-                <%= sheduler.dayweek.brief %> <br>
+            <div class="col-2">
+                <%= sheduler.lesson.brief %>
             </div>
-          <div class="col-8">
-                <%= sheduler.lesson.brief %><br>
+          <div class="col-sm">
           </div>
           <div class="col-2">
             <% if user_signed_in? %>  
@@ -20,5 +19,6 @@
         </div>
       </div>
       </div>
+    <% end %>
   <% end %>
 </div>

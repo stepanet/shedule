@@ -1,14 +1,15 @@
 <%= render 'layouts/body' %>
-<div class='all-posts'>
-    
 <% @dayweek.each do |dayweek| %>
-    <div class = 'alert alert-info'>
-        <h5><%= dayweek.brief %></h5>
-        <%= link_to 'Расписание на ' + dayweek.brief, dayweek_path(dayweek), {class: 'btn btn-sm btn-outline-info'}  %>
-        <% if user_signed_in? %>  
-        <%= link_to 'Редактировать...', edit_dayweek_path(dayweek), {class: 'btn btn-sm btn-outline-info'}  %>
-        <% end %>
-    </div>
-<% end %>
+<div>
+    <div class="container">
+          <div class="row">
+            <div class="col">
+            <a href="<%= dayweek_path(dayweek) %>"><h1 class = 'display-4'><%= dayweek.brief %></h1></a>
+            </div>
+            <div class="col-2"><br>
+              <% if user_signed_in? %>  <%= link_to 'Редактировать', edit_dayweek_path(dayweek), {class: 'btn btn-secondary btn-sm'}  %><% end %>
+            </div>
+      </div>
+  </div>
 </div>
-
+<% end %>
