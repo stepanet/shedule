@@ -4,15 +4,19 @@
     <div class="container">
       <div class="row">
             <div class="col-xs">
-              <h2><%= sheduler.numlesson.brief %></h2>
+              <h2 class = 'display-4'><%= sheduler.numlesson.brief %></h2>
             </div>
-            <div class="col-sm">
-                  <%= sheduler.lesson.brief %><br>
-                  <%= sheduler.startlesson %><br>
-                  <%= sheduler.endlesson %>
+            <div class="col-lg">
+                  <h2 class = 'display-4'><%= sheduler.lesson.brief %></h2>
             </div>
             <div class="col-xs">
-            <% if user_signed_in? %>                  
+                  <h2 class = 'display-4'><%= sheduler.startlesson %></h2>
+            </div>
+            <div class="col-sm">
+                  <h2 class = 'display-4'><%= sheduler.endlesson %></h2>
+            </div>
+            <div class="col-xs">
+            <% if user_signed_in? %><br>                 
             <%= link_to 'Редактировать...', edit_sheduler_path(sheduler), {class: 'btn btn-sm btn-outline-info'}  %>
             <% end %>
             </div>
