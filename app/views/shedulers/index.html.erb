@@ -1,8 +1,8 @@
 <%= render 'layouts/body' %>
-<hr style="width: 100%; color: white; height: 5px; background-color:white;" />
+<hr style="width: 100%; color: white; height: 2px; background-color:white" />
 <div class='all-posts'>
   <% @dayweeks.each do |dayweek| %>
-  <h1 class="display-4"><%= dayweek.brief %></h1>
+  <h1 class="display-4 align=center"><%= dayweek.brief %></h1>
     <% dayweek.shedulers.each do |sheduler| %>
       <div class = 'alert alert-info'>
         <div class="container">
@@ -13,7 +13,7 @@
           <div class="col-sm">
           </div>
           <div class="col-2">
-            <% if user_signed_in? %>  
+            <% if user_signed_in? %><br>  
                 <%= link_to 'Редактировать...', edit_sheduler_path(sheduler), {class: 'btn btn-sm btn-outline-info'}  %>
             <% end %>
           </div>
