@@ -5,10 +5,10 @@
     <div class="container">
       <div class="row">
         <div class="col-sm">
-          <h5><%= lesson.brief %></h5>
+          <h2 class = 'display-4'><%= lesson.brief %></h2>
         </div>
         <div class="col-xs">
-          <% if user_signed_in? %>  
+          <% if user_signed_in? %><br>  
           <%= link_to 'Редактировать...', edit_lesson_path(lesson), {class: 'btn btn-sm btn-outline-info'}  %>
           <% end %>
         </div>

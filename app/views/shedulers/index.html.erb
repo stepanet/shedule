@@ -1,4 +1,5 @@
 <%= render 'layouts/body' %>
+<hr style="width: 100%; color: white; height: 5px; background-color:white;" />
 <div class='all-posts'>
   <% @dayweeks.each do |dayweek| %>
   <h1 class="display-4"><%= dayweek.brief %></h1>
@@ -7,7 +8,7 @@
         <div class="container">
           <div class="row">
             <div class="col-2">
-                <%= sheduler.lesson.brief %>
+                <h2 class = 'display-4'><%= sheduler.lesson.brief %></h2>
             </div>
           <div class="col-sm">
           </div>
